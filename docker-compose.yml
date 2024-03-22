@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+  docker-jokes:
+    image: taniotoshi/docker-jokes:example
+    container_name: docker-jokes
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        NGINX_VERSION: ${NGINX_VERSION:-latest}
+      platforms:
+        - linux/amd64
+        - linux/arm64
+    environment:
+      # scripts/70-nginx.sh
+      # PORT: ${PORT}
+      # scripts/80-index.sh
+      # TITLE: ${TITLE}
+      # HEIGHT: ${HEIGHT}
+      # WIDTH: ${WIDTH}
+      # HEADLINE: ${HEADLINE}
+      # VIDEO: ${VIDEO}
+      RANDOM_VIDEO: true
+    ports:
+      - '8080:8080'

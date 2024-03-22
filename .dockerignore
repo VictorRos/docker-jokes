@@ -1,0 +1,9 @@
+# Ignore all dot files
+.*
+.git/
+docker-compose.yml
+Dockerfile
+LICENSE
+*.log
+*.md
+*.tgz
