@@ -13,7 +13,7 @@ pid       /tmp/nginx.pid;
 
 events {
   accept_mutex off;
-  worker_connections  1024;
+  worker_connections 1024;
 }
 
 http {
@@ -34,17 +34,17 @@ http {
   default_type  application/octet-stream;
 
   sendfile_max_chunk 512k;
-  sendfile        on;
-  tcp_nopush     on;
-  keepalive_timeout  65;
-  gzip  on;
+  sendfile on;
+  tcp_nopush on;
+  keepalive_timeout 65;
+  gzip on;
   gzip_proxied any;
   gzip_vary on;
   gzip_http_version 1.1;
 
   server {
     # add proxy caches
-    listen       ${PORT};
+    listen ${PORT};
 
     root /usr/share/nginx/html;
     index index.html;
@@ -62,7 +62,7 @@ http {
 
     location ~* \.(jpg|jpeg|gif|png|css|js|ico|webp|tiff|ttf|svg|mp4)$ {
       mp4;
-      mp4_buffer_size     1M;
+      mp4_buffer_size      1M;
       mp4_max_buffer_size 20M;
 
       add_header Accept-Ranges bytes;
