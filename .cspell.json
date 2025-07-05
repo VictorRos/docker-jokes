@@ -1,0 +1,64 @@
+{
+	"version": "0.2",
+	"language": "en-GB,en-US,fr-FR",
+	"import": [
+		"@cspell/dict-bash/cspell-ext.json",
+		"@cspell/dict-companies/cspell-ext.json",
+		"@cspell/dict-docker/cspell-ext.json",
+		"@cspell/dict-fr-fr/cspell-ext.json",
+		"@cspell/dict-git/cspell-ext.json",
+		"@cspell/dict-markdown/cspell-ext.json",
+		"@cspell/dict-software-terms/cspell-ext.json"
+	],
+	"caseSensitive": false,
+	"languageSettings": [
+		{
+			"languageId": "*",
+			"locale": "fr-FR",
+			"caseSensitive": false
+		}
+	],
+	"ignorePaths": ["**/.git/**", "**/.vscode/**", "**/megalinter-reports/**", "**/test/**", ".*"],
+	"ignoreWords": ["taniotoshi"],
+	"ignoreRegExpList": ["data-image-base64", "email", "jwt-token", "uuid", "uuid-non-hexadecimal"],
+	"patterns": [
+		{
+			"name": "data-image-base64",
+			"description": "Base64 encoded images",
+			"pattern": "/data:image/[^;]+;base64,.+/g"
+		},
+		{
+			"name": "email",
+			"description": "Email addresses",
+			"pattern": "/[\\w\\._-]+@[\\w\\._-]+\\.[a-z]{2,4}/g"
+		},
+		{
+			"name": "jwt-token",
+			"description": "JWT token",
+			"pattern": "/eyJ[A-Za-z0-9-_]+\\.[A-Za-z0-9-_]+\\.[A-Za-z0-9-_]+/g"
+		},
+		{
+			"name": "uuid",
+			"description": "UUID",
+			"pattern": "/[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}/g"
+		},
+		{
+			"name": "uuid-non-hexadecimal",
+			"description": "UUID with non-hexadecimal characters",
+			"pattern": "/[0-9a-zA-Z]{8}-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{12}/g"
+		}
+	],
+	"words": [
+		"buildx",
+		"fastcgi",
+		"healthz",
+		"keepalive",
+		"nopush",
+		"Rickroll",
+		"scgi",
+		"sendfile",
+		"shuf",
+		"uwsgi",
+		"webp"
+	]
+}
