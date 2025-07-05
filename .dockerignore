@@ -1,6 +1,7 @@
 # Ignore all dot files
-.*
 .git/
+scripts/
+.*
 docker-compose.yml
 Dockerfile
 LICENSE

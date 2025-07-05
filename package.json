@@ -1,0 +1,44 @@
+{
+	"name": "docker-jokes",
+	"version": "1.0.2",
+	"description": "Play a video such as Rickroll or Epic Sax Gandalf",
+	"main": "dist/app.js",
+	"config": {
+		"nginxVersion": "1.28.0-alpine3.21"
+	},
+	"scripts": {
+		"docker-build:prod": "bash src/docker-build.sh",
+		"docker-scout:base-image": "docker scout cves nginxinc/nginx-unprivileged:${npm_package_config_nginxVersion}",
+		"mega-linter": "rm -rf megalinter-reports && npx -y mega-linter-runner@8.8.0 --release v8.8.0 --flavor documentation --remove-container",
+		"prettier": "prettier --write --config .prettierrc.yaml --ignore-unknown .",
+		"update-dependencies": "npx -y npm-check-updates -i"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/VictorRos/docker-jokes.git"
+	},
+	"keywords": [
+		"Docker",
+		"Rickroll",
+		"Gandalf",
+		"Nginx"
+	],
+	"author": "VictorRos",
+	"license": "SEE LICENSE IN LICENSE",
+	"bugs": {
+		"url": "https://github.com/VictorRos/docker-jokes/issues"
+	},
+	"homepage": "https://github.com/VictorRos/docker-jokes#readme",
+	"devDependencies": {
+		"@cspell/dict-bash": "^4.2.0",
+		"@cspell/dict-companies": "^3.2.1",
+		"@cspell/dict-docker": "^1.1.14",
+		"@cspell/dict-fr-fr": "^2.3.0",
+		"@cspell/dict-git": "^3.0.6",
+		"@cspell/dict-markdown": "^2.0.11",
+		"@cspell/dict-software-terms": "^5.1.2",
+		"prettier": "^3.6.2",
+		"prettier-plugin-go-template": "^0.0.15",
+		"prettier-plugin-sh": "^0.18.0"
+	}
+}

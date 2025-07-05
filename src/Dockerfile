@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:latest
 
-ARG NGINX_VERSION
+ARG NGINX_VERSION=1.28.0-alpine3.21
 FROM nginxinc/nginx-unprivileged:${NGINX_VERSION}
 
 USER root
@@ -10,7 +10,7 @@ ARG GID=101
 
 # Copy files into image
 COPY --link videos/*.mp4 /usr/share/nginx/html/
-COPY --link --chmod=755 scripts/docker-entrypoint.d/*.sh /docker-entrypoint.d/
+COPY --link --chmod=755 docker-entrypoint.d/*.sh /docker-entrypoint.d/
 
 # Change permissions to index.html
 RUN chown $UID:0 /usr/share/nginx/html/index.html

@@ -18,7 +18,7 @@ if [ "${RANDOM_VIDEO}" = "true" ]; then
 fi
 
 # Create index.html
-tee /usr/share/nginx/html/index.html << EOF >/dev/null
+tee /usr/share/nginx/html/index.html << EOF > /dev/null
 <!DOCTYPE html>
 <html>
   <body>
@@ -40,7 +40,7 @@ tee /usr/share/nginx/html/index.html << EOF >/dev/null
       // Change the variables below to your liking
       const currentURL = "${VIDEO}";
       const pageTitle = "Loading...";
-      // End of changable variables
+      // End of changeable variables
 
       function setTitle() {
         document.title = pageTitle;

@@ -1,0 +1,39 @@
+# Project property files
+.history/
+.idea/
+.project/
+.settings/
+# Ignore all VSCode files except extensions.json
+.vscode/*
+!.vscode/extensions.json
+*.iml
+*.log
+*.rest
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Project generated files
+node_modules/
+dist/
+*.log
+*.tar
+*.tgz
+
+# Tests
+coverage/
+junit.xml
+test-report.xml
+
+# Lint
+eslint.json
+
+# All ".env*" files except ".env.*"
+.env*
+!.env.*
+
+# MegaLinter files
+tmp/
+megalinter-reports/
+*-megalinter_file_names_cspell.txt

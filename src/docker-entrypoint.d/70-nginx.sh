@@ -5,7 +5,7 @@ set -eu
 PORT="${PORT:-"8080"}"
 
 # Create nginx conf with port variable
-tee /etc/nginx/nginx.conf << 'EOF' >/dev/null
+tee /etc/nginx/nginx.conf << 'EOF' > /dev/null
 worker_processes  auto;
 
 error_log /var/log/nginx/error.log notice;
@@ -103,7 +103,7 @@ http {
 }
 EOF
 
-tee /etc/nginx/conf.d/health-check.conf << 'EOF' >/dev/null
+tee /etc/nginx/conf.d/health-check.conf << 'EOF' > /dev/null
 server {
   listen       9090;
   server_name  localhost;

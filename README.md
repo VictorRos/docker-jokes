@@ -17,10 +17,10 @@ services:
     container_name: docker-jokes
     environment:
       # VIDEO: Rickroll-1080.mp4
-      # VIDEO: EpixSaxGandalf-1080.mp4
+      # VIDEO: EpicSaxGandalf-1080.mp4
       RANDOM_VIDEO: true # One of the videos
     ports:
-      - '8080:8080'
+      - "8080:8080"
 ```
 
 ## Docker
