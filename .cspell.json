@@ -50,6 +50,7 @@
 	],
 	"words": [
 		"buildx",
+		"cves",
 		"fastcgi",
 		"healthz",
 		"keepalive",
