@@ -7,7 +7,7 @@
 		"nginxVersion": "1.28.0-alpine3.21"
 	},
 	"scripts": {
-		"docker-build:prod": "bash src/docker-build.sh",
+		"docker-build:prod": "bash scripts/docker-build.sh",
 		"docker-scout:base-image": "docker scout cves nginxinc/nginx-unprivileged:${npm_package_config_nginxVersion}",
 		"mega-linter": "rm -rf megalinter-reports && npx -y mega-linter-runner@8.8.0 --release v8.8.0 --flavor documentation --remove-container",
 		"prettier": "prettier --write --config .prettierrc.yaml --ignore-unknown .",
